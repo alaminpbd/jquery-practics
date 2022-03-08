@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btn1">Button</button>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+
+    <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid iure suscipit vero totam eius. Nemo fuga dolorum sapiente enim delectus?</p>
+    <button id="btn2">Click Here</button>
+
+    
+    <ul id="order-list">
+        <li>Order 1</li>
+        <li>Order 2</li>
+        <li>Order 3</li>
+        <li>Order 4</li>
+    </ul>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn1').on('click', function(){
+                $('h1').toggle();
+            });
+            $('#btn2').hover(function(){
+                $('#para1').css('font-size', '30px');
+            });
+
+            $('li:first').css('color', 'green');
+            $('li:last').css('color', 'red');
+        });
+    </script>
+
+</body>
+</html>

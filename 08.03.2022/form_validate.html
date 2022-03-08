@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/jquery.min.js"></script>
+    <title>Form Validation with Jquery</title>
+    <style>
+        .error{
+            color: red;
+        }
+        #info{
+            color: #008000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        $(document).ready(function(){
+            $('#check').click(validate);
+
+            function validate(){
+                var dataValidate = true;
+                $('#info').html('');
+                $('.required').each(function(){
+                    $(this).next('span').remove();
+                    if($(this).val() == ''){
+                        
+                        $(this).after('<span class="error">Please fulfill the field</span>');
+                        dataValidate = false;
+                    }
+                });
+                if(dataValidate){
+                    $('#info').text('Data Validation is okay');
+                }
+            }
+        });
+    </script>
+
+    <h1>Contact Form</h1>
+    <div id="info"></div>
+    <form action="">
+        <label for="">Name : </label>
+        <input type="text" name="name" class="required"><br>
+        <label for="">Address : </label>
+        <input type="text" name="address" class="required"><br>
+        <label for="">City : </label>
+        <input type="text" name="city" class="required"><br>
+        <label for="">Country : </label>
+        <input type="text" name="country" class="required"><br>
+        <input type="button" id="check" value="Check">
+    </form>
+
+
+    
+</body>
+</html>
